@@ -1,0 +1,7 @@
+conda create -n annotationviz python=2.7
+source activate annotationviz
+pip install pandas==0.19.2
+pip install pymongo==3.4.0
+pip install shapely==1.5.17.post1
+pip install flask==0.12
+pip install titlecase==0.8.2

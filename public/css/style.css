@@ -1,0 +1,52 @@
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0px;
+    font-size: 0.8em;
+    background-color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+}
+
+.panel {
+    display: inline-block;
+    border: 1px dotted #AAA;
+    overflow: scroll;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #AAA;
+    shape-rendering: crispEdges;
+}
+
+.baxis path,
+.baxis line {
+    fill: none;
+    stroke: #AAA;
+    shape-rendering: crispEdges;
+}
+
+.tick line {
+    opacity: 0.2;
+}
+
+.tick text {
+    fill: #AAA;
+    text-transform: capitalize;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+text {
+    text-transform: capitalize;
+}
+
