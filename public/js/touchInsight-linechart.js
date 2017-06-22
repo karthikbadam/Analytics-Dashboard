@@ -96,10 +96,16 @@ function LineChart(options) {
             var filterDim = aggregates.filter(function (e) {
                 for (var i = 0; i < filters.length; i++) {
                     var filter = filters[i];
-                    return e >= filter[0] && e <= filter[1];
+                    if (e >= filter[0] && e <= filter[1]) {
+                        return true;
+                    } else {
+                        continue;
+                    }
                 }
+                return false;
             });
         }
+
         queryManager.setGlobalQuery(query, true);
         queryManager.retrieveData();
     }

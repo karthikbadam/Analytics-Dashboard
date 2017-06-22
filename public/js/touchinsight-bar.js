@@ -172,7 +172,7 @@ function BarChart(options) {
 
             foregroundBars.append("rect")
                 .attr("width", function (d) {
-                    return x(d["value"]) + 1;
+                    return x(d["value"]) >= 0 ? x(d["value"]) : 0;
                 })
                 .attr("height", barH - 5)
                 .attr("fill", THEME.fillColor)
@@ -191,7 +191,7 @@ function BarChart(options) {
 
             foregroundBarElements.select("g rect")
                 .attr("width", function (d) {
-                    return x(d["value"]) + 1;
+                    return x(d["value"]) >= 0 ? x(d["value"]) : 0;
                 })
                 .attr("height", barH - 5)
                 .style("display", function (d) {
@@ -242,7 +242,9 @@ function BarChart(options) {
             foregroundBarElements.exit().remove();
 
             d3.select(this).selectAll("svg").selectAll("text.name")
-                .data(data)
+                .data(data, function (d) {
+                    return JSON.stringify(d["key"]);
+                })
                 .enter().append("text")
                 .style("width", margin.left)
                 .attr("x", margin.left - 5)
