@@ -1,2 +1,8 @@
 source activate annotationviz
+
+## To add data to database
+python mongo_insert.py 
+
+## To run the server
 python app.py
+
